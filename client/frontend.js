@@ -8,13 +8,15 @@ new Vue({
                 name: '',
                 value: ''
 
-            }
+            },
+
+            contacts: []
         }
     },
     methods: {
         createContact() {
             const {...contact} = this.form
-            console.log(contact)
+            this.contacts.push({...contact, id: Date.now()})
 
             this.form.name = this.form.value = ''
         }
